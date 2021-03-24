@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block main %}
+<!---->
+<div class="propCard">
+    <div class="photo-container">
+
+      <img
+        class="property-photo"
+        src="{{ url_for('get_image', filename=prop.pic) }}"
+        alt="Property Photo"
+      />
+    </div>
+    <div class="property-desc">
+      <h5>{{ prop.title }}</h5>
+      <div class="price">${{ prop.price }}</div>
+      <p>{{ prop.pType }}</p>
+      <p>{{ prop.desc }}</p>
+      <p>{{ prop.numBed }}</p>
+      <p>{{ prop.numBath }}</p>
+      <p>{{ prop.location }}</p>
+      <button class = "btn btn-primary">Email Realtor</button>
+      
+      
+    </div>
+  </div>
+<!-- -->
+{% endblock %}

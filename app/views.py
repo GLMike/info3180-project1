@@ -78,8 +78,8 @@ def get_properties():
 @app.route("/property/<property_id>")
 def view_property(property_id):
     # Retrieve the property with the matching id
-    props = PropertyModel.query.filter_by(id=property_id).first()
-    return render_template("view_property.html", props=props)    
+    prop = PropertyModel.query.filter_by(id=property_id).first()
+    return render_template("view_property.html", prop=prop)    
 
 @app.route('/uploads/<filename>')
 def get_image(filename):
