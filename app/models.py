@@ -3,10 +3,7 @@ import enum
 from sqlalchemy import Enum, Integer
 
 
-class PropertyType(enum.Enum):
-    # instantiates the property types
-    house = 'house'
-    apartment = 'apartment'
+
 
 class PropertyModel(db.Model):
     __tablename__ = 'properties'
@@ -16,15 +13,13 @@ class PropertyModel(db.Model):
     numBath = db.Column(db.String(50))
     location = db.Column(db.String(50))
     price = db.Column(db.String(50))
-    pType = db.Column(Enum(PropertyType))
+    pType = db.Column(db.String(50))
     desc = db.Column(db.String(300))
     pic = db.Column(db.String(300))
     
 
 
     def __init__(self, title, numBed, numBath, location, price, pType, desc, pic):
-
-        super().__init__()
 
         self.title = title
         self.numBed = numBed

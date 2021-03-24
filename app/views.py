@@ -83,8 +83,8 @@ def view_property(property_id):
 
 @app.route('/uploads/<filename>')
 def get_image(filename):
-    upload_dir = app.config.get('UPLOAD_FOLDER')
-    return send_from_directory(upload_dir, filename=filename)
+    root_dir = os.getcwd()
+    return send_from_directory(os.path.join(root_dir, app.config['UPLOAD_FOLDER']), filename)
 
 
 
