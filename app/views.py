@@ -30,7 +30,7 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Shane-Michael Thompson")
 
 @app.route('/property/', methods=['GET', 'POST'])
 def newProperty():
